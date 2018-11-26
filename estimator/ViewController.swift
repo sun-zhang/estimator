@@ -9,7 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBAction func click(_ sender: Any) {
+        print("这里是点击事件触发")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

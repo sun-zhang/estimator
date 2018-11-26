@@ -14,6 +14,8 @@
 		227D3B5821AA63DD00BB56ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227D3B5621AA63DD00BB56ED /* Main.storyboard */; };
 		227D3B6421AA63DD00BB56ED /* estimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B6321AA63DD00BB56ED /* estimatorTests.swift */; };
 		227D3B6F21AA63DD00BB56ED /* estimatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B6E21AA63DD00BB56ED /* estimatorUITests.swift */; };
+		22F0B5D221AC25B300F2E40D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227D3B5621AA63DD00BB56ED /* Main.storyboard */; };
+		22F0B5D321AC25B400F2E40D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227D3B5621AA63DD00BB56ED /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +197,11 @@
 				TargetAttributes = {
 					227D3B4921AA63DB00BB56ED = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					227D3B5E21AA63DD00BB56ED = {
 						CreatedOnToolsVersion = 10.1;
@@ -240,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F0B5D221AC25B300F2E40D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F0B5D321AC25B400F2E40D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
