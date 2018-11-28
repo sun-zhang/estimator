@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController{
     
     //定义字符串数组，并初始化
     var properties = ["kern.ostype","kern.osrelease","kern.osrevision","kern.osversion","kern.version","kern.hostname",
@@ -16,6 +16,9 @@ class ViewController: NSViewController {
         "hw.logicalcpu","hw.cputype","hw.cpusubtype","hw.memsize","hw.cpufamily","hw.cpufrequency","hw.cpufrequency_min","hw.cpufrequency_max",
         "hw.l1icachesize","hw.l2cachesize","hw.l3cachesize","machdep.cpu.vendor","machdep.cpu.brand_string","machdep.cpu.family","machdep.cpu.model",
         "machdep.cpu.core_count","machdep.cpu.thread_count"]
+    
+    //定义了一个字典对象，但是似乎没有什么用
+    var dictionary: Dictionary<String, Any>?
     
     @IBAction func click(_ sender: Any) {
         /* 暂时屏蔽
@@ -52,6 +55,7 @@ class ViewController: NSViewController {
             //打印到控制台
             print(key, platform(key: key))
         }
+        
        
     }
     
@@ -67,9 +71,14 @@ class ViewController: NSViewController {
         return String(cString: machine_value)
     }
     
+    @IBOutlet weak var tableView: NSTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //定义tableView的代理和数据源协议实现类都是本身
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -82,3 +91,48 @@ class ViewController: NSViewController {
 
 }
 
+//view controller实现NSTableViewDataSource协议语法
+extension ViewController: NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return properties.count
+    }
+    
+}
+
+//再实现一个NSTableViewDelegate协议
+extension ViewController: NSTableViewDelegate{
+    
+    fileprivate enum CellIdentifiers {
+        static let detailID = "detailID"
+        static let itemID = "itemID"
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        var text: String = ""
+        var cellIdentifier: String = ""
+        
+        // 1
+        //TODO: 这里需要对dictionary的数据集进行改写，不能使用dictionary，因为无法使用row属性
+        guard let item = dictionary else {
+            return nil
+        }
+        
+        // 2
+        if tableColumn == tableView.tableColumns[0] {
+            //这里缺少对text的赋值，下一个if逻辑同理
+            //text = item.key
+            cellIdentifier = CellIdentifiers.itemID
+        } else if tableColumn == tableView.tableColumns[1] {
+            //text = item.value
+            cellIdentifier = CellIdentifiers.detailID
+        }
+        
+        // 3
+        if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
+            cell.textField?.stringValue = text
+            return cell
+        }
+        return nil
+    }
+}
