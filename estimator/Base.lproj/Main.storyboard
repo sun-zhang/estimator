@@ -711,7 +711,7 @@
                         <subviews>
                             <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHA-Jn-eYY">
                                 <rect key="frame" x="2" y="539" width="147" height="32"/>
-                                <buttonCell key="cell" type="push" title="点击获取本机信息" bezelStyle="rounded" alignment="center" borderStyle="border" identifier="getMachineInfoButton" imageScaling="proportionallyDown" sound="Funk" inset="2" id="XHZ-Pb-ze0">
+                                <buttonCell key="cell" type="push" title="点击获取本机信息" bezelStyle="rounded" alignment="center" borderStyle="border" identifier="getMachineInfoButton" imageScaling="proportionallyDown" inset="2" id="XHZ-Pb-ze0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                     <connections>
@@ -770,7 +770,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="detailID" width="681" minWidth="40" maxWidth="1000" id="rIk-Zf-3Nz">
+                                                <tableColumn identifier="DetailID" width="681" minWidth="40" maxWidth="1000" id="rIk-Zf-3Nz">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="详细配置">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -841,7 +841,4 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
-    <resources>
-        <sound name="Funk"/>
-    </resources>
 </document>

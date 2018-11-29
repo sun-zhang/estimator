@@ -17,8 +17,8 @@ class ViewController: NSViewController{
         "hw.l1icachesize","hw.l2cachesize","hw.l3cachesize","machdep.cpu.vendor","machdep.cpu.brand_string","machdep.cpu.family","machdep.cpu.model",
         "machdep.cpu.core_count","machdep.cpu.thread_count"]
     
-    //定义了一个字典对象，但是似乎没有什么用
-    var dictionary: Dictionary<String, Any>?
+    //定义一个字定对象的数组，用于数据的存储，默认值为空
+    var dataset : [InformationItem?] = []
     
     @IBAction func click(_ sender: Any) {
         /* 暂时屏蔽
@@ -53,16 +53,24 @@ class ViewController: NSViewController{
         //循环获取数组中值，并赋值到key变量中
         for key in properties {
             //打印到控制台
-            print(key, platform(key: key))
+            //print(key, platform(key: key))
+            //赋值
+            let item = InformationItem(itemName:key,itemValue:platform(key: key))
+            //print(item.itemName,item.itemValue)
+            dataset.append(item)
         }
         
-       
+        //定义tableView的代理和数据源协议实现类都是本身
+        //放在这里就是在按钮点击事件触发的时候，给tableview填充数据
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     //定义函数platform，来依次获取系统中的值，并返回结果
     func platform(key:String) -> String {
         var size = 0
         //使用sysctlbyname方法获取系统,目前还是OC的用法，swift没有提供
+        //这个方法还是有点问题，无法正常获取数字类型的值
         sysctlbyname(key, nil, &size, nil, 0)
         var machine_value = [CChar](repeating: 0,  count: size)
         sysctlbyname(key, &machine_value, &size, nil, 0)
@@ -75,10 +83,7 @@ class ViewController: NSViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //定义tableView的代理和数据源协议实现类都是本身
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -103,36 +108,41 @@ extension ViewController: NSTableViewDataSource {
 //再实现一个NSTableViewDelegate协议
 extension ViewController: NSTableViewDelegate{
     
+    //定义了一个列标示的枚举，值是在storyboard中配置的属性值
     fileprivate enum CellIdentifiers {
-        static let detailID = "detailID"
-        static let itemID = "itemID"
+        static let detailID = "DetailID"
+        static let itemID = "ItemID"
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var text: String = ""
         var cellIdentifier: String = ""
         
-        // 1
-        //TODO: 这里需要对dictionary的数据集进行改写，不能使用dictionary，因为无法使用row属性
-        guard let item = dictionary else {
+        // 1、判断对象是否为空，是则返回nil给cell
+        guard let item = dataset[row] else {
             return nil
         }
         
-        // 2
+        // 2、给tableview的列赋值
         if tableColumn == tableView.tableColumns[0] {
-            //这里缺少对text的赋值，下一个if逻辑同理
-            //text = item.key
+            text = item.itemName
             cellIdentifier = CellIdentifiers.itemID
         } else if tableColumn == tableView.tableColumns[1] {
-            //text = item.value
+            text = item.itemValue
             cellIdentifier = CellIdentifiers.detailID
         }
         
-        // 3
-        if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? NSTableCellView {
+        // 3、创建cellview对象
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView {
             cell.textField?.stringValue = text
             return cell
         }
         return nil
     }
+}
+
+//定义一个自定义结构体当作自定义对象，用于存储
+struct InformationItem {
+    var itemName :String
+    var itemValue : String
 }
