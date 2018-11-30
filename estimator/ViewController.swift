@@ -55,7 +55,7 @@ class ViewController: NSViewController{
             //打印到控制台
             //print(key, platform(key: key))
             //赋值
-            let item = InformationItem(itemName:key,itemValue:platform(key: key))
+            let item = InformationItem(itemName:key,itemValue:platform2(key: key))
             //print(item.itemName,item.itemValue)
             dataset.append(item)
         }
@@ -79,6 +79,68 @@ class ViewController: NSViewController{
         return String(cString: machine_value)
     }
     
+    func platform2(key:String) -> String{
+        if let key = key.cString(using: String.Encoding.utf8) {
+            //先取到目标值的字节数
+            var size: Int = 0
+            sysctlbyname(key, nil, &size, nil, 0)
+            //判断是否位数字类型的字节长度
+            if size == 4 || size == 8 || size == 16 || size == 32 {
+                let keyStr = String(cString: key)
+                //特殊情况处理，有一个字符串类型的值正好是8个字节长度的，过滤掉
+                if keyStr == properties[7]{
+                    return getStringValue(key: key, size: &size)
+                }else{
+                    //特殊情况，值是时间戳类型，转换成正常的日期格式
+                    if keyStr == properties[8] || keyStr == properties[9]{
+                        return timestampToDateString(timestamp: getIntegerValue(key: key, size: &size))
+                    }else{
+                        //剩下的都是数字类型值
+                        return String(getIntegerValue(key: key, size: &size))
+                    }
+                }
+            }else{
+                return getStringValue(key: key, size: &size)
+            }
+        }
+        return ""
+    }
+    
+    //时间戳转日期格式函数
+    func timestampToDateString(timestamp:Int) -> String {
+        //转换为时间
+        let timeInterval:TimeInterval = TimeInterval(timestamp)
+        let date = Date(timeIntervalSince1970: timeInterval)
+        
+        //格式话输出
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        return dformatter.string(from: date)
+    }
+    
+    func dateToTimestamp(date : Date) -> Int {
+        //当前时间的时间戳
+        let timeInterval:TimeInterval = date.timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        return timeStamp
+    }
+    
+    //获取数字值函数
+    func getIntegerValue(key:[CChar],size:UnsafeMutablePointer<Int>) -> Int {
+        let intValue = UnsafeMutablePointer<Int>.allocate(capacity: 1)
+        sysctlbyname(key, intValue, size,nil, 0)
+        let value = intValue.pointee
+        free(intValue)
+        return value
+    }
+    
+    //获取字符串值函数
+    func getStringValue(key:[CChar],size:UnsafeMutablePointer<Int>!) -> String {
+        var machine = [CChar](repeating: 0, count: size.pointee)
+        sysctlbyname(key, &machine, size, nil, 0)
+        return String(cString: machine)
+    }
+    
     @IBOutlet weak var tableView: NSTableView!
     
     override func viewDidLoad() {
@@ -93,6 +155,11 @@ class ViewController: NSViewController{
         }
     }
 
+    deinit {
+        print("被销毁了...")
+        tableView.delegate = nil
+        tableView.dataSource = nil
+    }
 
 }
 
