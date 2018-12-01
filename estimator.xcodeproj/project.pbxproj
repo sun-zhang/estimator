@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223946DB21B2CAD700FDBE9B /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */; };
+		223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946DC21B2CDCD00FDBE9B /* Battery.swift */; };
 		227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */; };
 		227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4F21AA63DB00BB56ED /* ViewController.swift */; };
 		227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
+		223946DC21B2CDCD00FDBE9B /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		227D3B4A21AA63DB00BB56ED /* estimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227D3B4F21AA63DB00BB56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			children = (
 				227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */,
 				227D3B4F21AA63DB00BB56ED /* ViewController.swift */,
+				223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */,
+				223946DC21B2CDCD00FDBE9B /* Battery.swift */,
 				227D3B5421AA63DD00BB56ED /* Assets.xcassets */,
 				227D3B5621AA63DD00BB56ED /* Main.storyboard */,
 				227D3B5921AA63DD00BB56ED /* Info.plist */,
@@ -266,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */,
 				227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */,
 				227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */,
 				227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */,
+				223946DB21B2CAD700FDBE9B /* BatteryInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -154,13 +154,6 @@ class ViewController: NSViewController{
         // Update the view, if already loaded.
         }
     }
-
-    deinit {
-        print("被销毁了...")
-        tableView.delegate = nil
-        tableView.dataSource = nil
-    }
-
 }
 
 //view controller实现NSTableViewDataSource协议语法
