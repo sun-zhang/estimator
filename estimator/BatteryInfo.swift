@@ -12,43 +12,43 @@ import IOKit.ps
 class BatteryInfo : Battery {
     
     func getMaxCapacity() -> Int {
-        <#code#>
+        return 0
     }
     
     func getCurrentCapacity() -> Int {
-        <#code#>
+        return 0
     }
     
     func getPowerSourceState() -> String {
-        <#code#>
+        return ""
     }
     
     func isCharging() -> Bool {
-        <#code#>
+        return false
     }
     
     func isCharged() -> Bool {
-        <#code#>
+        return false
     }
     
     func isPresent() -> Bool {
-        <#code#>
+        return false
     }
     
     func getHardwareSerialNumber() -> String {
-        <#code#>
+        return ""
     }
     
     func getDesignCycleCount() -> Int {
-        <#code#>
+        return 0
     }
     
     func getCurrentCycleCount() -> Int {
-        <#code#>
+        return 0
     }
     
     func getBatteryHealth() -> String {
-        <#code#>
+        return ""
     }
     
     

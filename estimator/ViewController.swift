@@ -60,10 +60,16 @@ class ViewController: NSViewController{
             dataset.append(item)
         }
         
+//        let kernelPage = self.storyboard?.instantiateController(withIdentifier: "TabViewController") as! NSViewController
+        
+//        self.presentAsSheet(kernelPage)
+//        self.presentAsModalWindow(kernelPage)
+//        self.transition(from: self, to: kernelPage, options: NSViewController.TransitionOptions.slideBackward, completionHandler: nil)
+        
         //定义tableView的代理和数据源协议实现类都是本身
         //放在这里就是在按钮点击事件触发的时候，给tableview填充数据
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
     }
     
     //定义函数platform，来依次获取系统中的值，并返回结果

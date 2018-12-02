@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		223946DB21B2CAD700FDBE9B /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */; };
 		223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946DC21B2CDCD00FDBE9B /* Battery.swift */; };
+		223946DF21B4262300FDBE9B /* BatteryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946DE21B4262300FDBE9B /* BatteryInfoViewController.swift */; };
 		227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */; };
 		227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4F21AA63DB00BB56ED /* ViewController.swift */; };
 		227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
 		223946DC21B2CDCD00FDBE9B /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		223946DE21B4262300FDBE9B /* BatteryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfoViewController.swift; sourceTree = "<group>"; };
 		227D3B4A21AA63DB00BB56ED /* estimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227D3B4F21AA63DB00BB56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */,
 				227D3B4F21AA63DB00BB56ED /* ViewController.swift */,
+				223946DE21B4262300FDBE9B /* BatteryInfoViewController.swift */,
 				223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */,
 				223946DC21B2CDCD00FDBE9B /* Battery.swift */,
 				227D3B5421AA63DD00BB56ED /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 			files = (
 				223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */,
 				227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */,
+				223946DF21B4262300FDBE9B /* BatteryInfoViewController.swift in Sources */,
 				227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */,
 				227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */,
 				223946DB21B2CAD700FDBE9B /* BatteryInfo.swift in Sources */,
