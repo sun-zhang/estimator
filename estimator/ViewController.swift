@@ -17,8 +17,7 @@ class ViewController: NSViewController{
         "hw.l1icachesize","hw.l2cachesize","hw.l3cachesize","machdep.cpu.vendor","machdep.cpu.brand_string","machdep.cpu.family","machdep.cpu.model",
         "machdep.cpu.core_count","machdep.cpu.thread_count"]
     
-    //定义一个字定对象的数组，用于数据的存储，默认值为空
-    var dataset : [InformationItem?] = []
+
     
     @IBAction func click(_ sender: Any) {
         /* 暂时屏蔽
@@ -55,9 +54,9 @@ class ViewController: NSViewController{
             //打印到控制台
             //print(key, platform(key: key))
             //赋值
-            let item = InformationItem(itemName:key,itemValue:platform2(key: key))
-            //print(item.itemName,item.itemValue)
-            dataset.append(item)
+            let item = TableViewUtil.InformationItem(itemName:key,itemValue:platform2(key: key))
+            //这里还有问题
+            //TableViewUtil.dataset.append(item)
         }
         
 //        let kernelPage = self.storyboard?.instantiateController(withIdentifier: "TabViewController") as! NSViewController
@@ -147,7 +146,6 @@ class ViewController: NSViewController{
         return String(cString: machine)
     }
     
-    @IBOutlet weak var tableView: NSTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,53 +160,4 @@ class ViewController: NSViewController{
     }
 }
 
-//view controller实现NSTableViewDataSource协议语法
-extension ViewController: NSTableViewDataSource {
-    
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return properties.count
-    }
-    
-}
 
-//再实现一个NSTableViewDelegate协议
-extension ViewController: NSTableViewDelegate{
-    
-    //定义了一个列标示的枚举，值是在storyboard中配置的属性值
-    fileprivate enum CellIdentifiers {
-        static let detailID = "DetailID"
-        static let itemID = "ItemID"
-    }
-    
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var text: String = ""
-        var cellIdentifier: String = ""
-        
-        // 1、判断对象是否为空，是则返回nil给cell
-        guard let item = dataset[row] else {
-            return nil
-        }
-        
-        // 2、给tableview的列赋值
-        if tableColumn == tableView.tableColumns[0] {
-            text = item.itemName
-            cellIdentifier = CellIdentifiers.itemID
-        } else if tableColumn == tableView.tableColumns[1] {
-            text = item.itemValue
-            cellIdentifier = CellIdentifiers.detailID
-        }
-        
-        // 3、创建cellview对象
-        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView {
-            cell.textField?.stringValue = text
-            return cell
-        }
-        return nil
-    }
-}
-
-//定义一个自定义结构体当作自定义对象，用于存储
-struct InformationItem {
-    var itemName :String
-    var itemValue : String
-}

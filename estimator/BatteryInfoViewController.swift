@@ -10,6 +10,28 @@ import Cocoa
 import Foundation
 
 class BatteryInfoViewController : NSViewController{
+ 
+
+    
+    @IBOutlet weak var batteryInfoTableView: NSScrollView!
+   
+    
+}
+
+
+
+//view controller实现NSTableViewDataSource协议语法
+extension ViewController: NSTableViewDataSource {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return properties.count
+    }
+    
+}
+
+//再实现一个NSTableViewDelegate协议
+extension ViewController: NSTableViewDelegate{
+    
     
 }
 
