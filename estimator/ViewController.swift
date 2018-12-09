@@ -54,7 +54,7 @@ class ViewController: NSViewController{
             //打印到控制台
             //print(key, platform(key: key))
             //赋值
-            let item = TableViewUtil.InformationItem(itemName:key,itemValue:platform2(key: key))
+            _ = TableViewUtil.InformationItem(itemName:key,itemValue:platform2(key: key))
             //这里还有问题
             //TableViewUtil.dataset.append(item)
         }

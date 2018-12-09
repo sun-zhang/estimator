@@ -13,6 +13,8 @@
 		223946E121B6BEC200FDBE9B /* HardwareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946E021B6BEC200FDBE9B /* HardwareInfoViewController.swift */; };
 		223946E521B6C09400FDBE9B /* KernelInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946E421B6C09400FDBE9B /* KernelInfoViewController.swift */; };
 		223946E721B6C2FD00FDBE9B /* TableViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */; };
+		2253A4BF21BCFB5B00B4BECF /* OCBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4BE21BCFB5B00B4BECF /* OCBridge.m */; };
+		2253A4C321BD0C3B00B4BECF /* BatteryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */; };
 		227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */; };
 		227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4F21AA63DB00BB56ED /* ViewController.swift */; };
 		227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */; };
@@ -48,6 +50,9 @@
 		223946E021B6BEC200FDBE9B /* HardwareInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareInfoViewController.swift; sourceTree = "<group>"; };
 		223946E421B6C09400FDBE9B /* KernelInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelInfoViewController.swift; sourceTree = "<group>"; };
 		223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUtil.swift; sourceTree = "<group>"; };
+		2253A4BD21BCFB5B00B4BECF /* estimator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "estimator-Bridging-Header.h"; sourceTree = "<group>"; };
+		2253A4BE21BCFB5B00B4BECF /* OCBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCBridge.m; sourceTree = "<group>"; };
+		2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryUtil.swift; sourceTree = "<group>"; };
 		227D3B4A21AA63DB00BB56ED /* estimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227D3B4F21AA63DB00BB56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +94,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2253A4C121BD0BD900B4BECF /* Battery */ = {
+			isa = PBXGroup;
+			children = (
+				223946DE21B4262300FDBE9B /* BatteryInfoViewController.swift */,
+				223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */,
+				223946DC21B2CDCD00FDBE9B /* Battery.swift */,
+				2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */,
+			);
+			path = Battery;
+			sourceTree = "<group>";
+		};
 		227D3B4121AA63DB00BB56ED = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +131,7 @@
 				227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */,
 				227D3B4F21AA63DB00BB56ED /* ViewController.swift */,
 				223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */,
-				223946DE21B4262300FDBE9B /* BatteryInfoViewController.swift */,
-				223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */,
-				223946DC21B2CDCD00FDBE9B /* Battery.swift */,
+				2253A4C121BD0BD900B4BECF /* Battery */,
 				227D3B5421AA63DD00BB56ED /* Assets.xcassets */,
 				227D3B5621AA63DD00BB56ED /* Main.storyboard */,
 				223946E021B6BEC200FDBE9B /* HardwareInfoViewController.swift */,
@@ -125,6 +139,8 @@
 				227D3B5921AA63DD00BB56ED /* Info.plist */,
 				227D3B5A21AA63DD00BB56ED /* estimator.entitlements */,
 				227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */,
+				2253A4BE21BCFB5B00B4BECF /* OCBridge.m */,
+				2253A4BD21BCFB5B00B4BECF /* estimator-Bridging-Header.h */,
 			);
 			path = estimator;
 			sourceTree = "<group>";
@@ -215,6 +231,7 @@
 				TargetAttributes = {
 					227D3B4921AA63DB00BB56ED = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -286,9 +303,11 @@
 			files = (
 				223946E721B6C2FD00FDBE9B /* TableViewUtil.swift in Sources */,
 				223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */,
+				2253A4BF21BCFB5B00B4BECF /* OCBridge.m in Sources */,
 				227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */,
 				223946E121B6BEC200FDBE9B /* HardwareInfoViewController.swift in Sources */,
 				223946DF21B4262300FDBE9B /* BatteryInfoViewController.swift in Sources */,
+				2253A4C321BD0C3B00B4BECF /* BatteryUtil.swift in Sources */,
 				227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */,
 				223946E521B6C09400FDBE9B /* KernelInfoViewController.swift in Sources */,
 				227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */,
@@ -458,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = estimator/estimator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -468,6 +488,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.meeko.estimator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "estimator/estimator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -476,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = estimator/estimator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -486,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.meeko.estimator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "estimator/estimator-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
