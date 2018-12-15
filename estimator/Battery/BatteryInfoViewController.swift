@@ -19,11 +19,12 @@ class BatteryInfoViewController : NSViewController{
 
     override func viewDidLoad() {
         
-        print(BatteryUtil.getPowerSourcesListInfo())
+       print(CommandLineUtil.runCommand(launchPath: "/usr/sbin/system_profiler", arguments: ["SPHardwareDataType"]))
+       // print(BatteryUtil.getPowerSourcesListInfo())
 
-        print(BatteryUtil.getBatteryStatus())
+       // print(BatteryUtil.getBatteryStatus())
         
-        print(BatteryUtil.getBatteryBasicInfo())
+       // print(BatteryUtil.getBatteryBasicInfo())
     }
 }
 

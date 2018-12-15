@@ -15,6 +15,7 @@
 		223946E721B6C2FD00FDBE9B /* TableViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */; };
 		2253A4BF21BCFB5B00B4BECF /* OCBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4BE21BCFB5B00B4BECF /* OCBridge.m */; };
 		2253A4C321BD0C3B00B4BECF /* BatteryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */; };
+		2253A4C621C5458D00B4BECF /* CommandLineUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */; };
 		227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */; };
 		227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4F21AA63DB00BB56ED /* ViewController.swift */; };
 		227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 		2253A4BD21BCFB5B00B4BECF /* estimator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "estimator-Bridging-Header.h"; sourceTree = "<group>"; };
 		2253A4BE21BCFB5B00B4BECF /* OCBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCBridge.m; sourceTree = "<group>"; };
 		2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryUtil.swift; sourceTree = "<group>"; };
+		2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineUtil.swift; sourceTree = "<group>"; };
 		227D3B4A21AA63DB00BB56ED /* estimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227D3B4F21AA63DB00BB56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = Battery;
 			sourceTree = "<group>";
 		};
+		2253A4C421C5455F00B4BECF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		227D3B4121AA63DB00BB56ED = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		227D3B4C21AA63DB00BB56ED /* estimator */ = {
 			isa = PBXGroup;
 			children = (
+				2253A4C421C5455F00B4BECF /* Utils */,
 				227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */,
 				227D3B4F21AA63DB00BB56ED /* ViewController.swift */,
 				223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */,
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				223946E721B6C2FD00FDBE9B /* TableViewUtil.swift in Sources */,
+				2253A4C621C5458D00B4BECF /* CommandLineUtil.swift in Sources */,
 				223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */,
 				2253A4BF21BCFB5B00B4BECF /* OCBridge.m in Sources */,
 				227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */,
