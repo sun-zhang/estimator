@@ -16,6 +16,14 @@
 		2253A4BF21BCFB5B00B4BECF /* OCBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4BE21BCFB5B00B4BECF /* OCBridge.m */; };
 		2253A4C321BD0C3B00B4BECF /* BatteryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */; };
 		2253A4C621C5458D00B4BECF /* CommandLineUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */; };
+		2253A4C821C5EB3300B4BECF /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C721C5EB3300B4BECF /* LogUtil.swift */; };
+		2253A4CA21C5EBF600B4BECF /* CommandLineResultReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4C921C5EBF600B4BECF /* CommandLineResultReader.swift */; };
+		2253A4CC21CB41EA00B4BECF /* SystemProfilerEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4CB21CB41EA00B4BECF /* SystemProfilerEnums.swift */; };
+		2253A4CF21CB68BF00B4BECF /* EnumeratableEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4CE21CB68BF00B4BECF /* EnumeratableEnumType.swift */; };
+		2253A4D121CB8F8000B4BECF /* ModelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4D021CB8F8000B4BECF /* ModelInfo.swift */; };
+		2253A4D321CB94C600B4BECF /* ChargeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4D221CB94C600B4BECF /* ChargeInfo.swift */; };
+		2253A4D521CB956F00B4BECF /* YesNoEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4D421CB956F00B4BECF /* YesNoEnum.swift */; };
+		2253A4D721CB97C000B4BECF /* HealthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253A4D621CB97C000B4BECF /* HealthInfo.swift */; };
 		227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */; };
 		227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B4F21AA63DB00BB56ED /* ViewController.swift */; };
 		227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */; };
@@ -55,6 +63,14 @@
 		2253A4BE21BCFB5B00B4BECF /* OCBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCBridge.m; sourceTree = "<group>"; };
 		2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryUtil.swift; sourceTree = "<group>"; };
 		2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineUtil.swift; sourceTree = "<group>"; };
+		2253A4C721C5EB3300B4BECF /* LogUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
+		2253A4C921C5EBF600B4BECF /* CommandLineResultReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLineResultReader.swift; sourceTree = "<group>"; };
+		2253A4CB21CB41EA00B4BECF /* SystemProfilerEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfilerEnums.swift; sourceTree = "<group>"; };
+		2253A4CE21CB68BF00B4BECF /* EnumeratableEnumType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumeratableEnumType.swift; sourceTree = "<group>"; };
+		2253A4D021CB8F8000B4BECF /* ModelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInfo.swift; sourceTree = "<group>"; };
+		2253A4D221CB94C600B4BECF /* ChargeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeInfo.swift; sourceTree = "<group>"; };
+		2253A4D421CB956F00B4BECF /* YesNoEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoEnum.swift; sourceTree = "<group>"; };
+		2253A4D621CB97C000B4BECF /* HealthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInfo.swift; sourceTree = "<group>"; };
 		227D3B4A21AA63DB00BB56ED /* estimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		227D3B4F21AA63DB00BB56ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +119,9 @@
 				223946DA21B2CAD700FDBE9B /* BatteryInfo.swift */,
 				223946DC21B2CDCD00FDBE9B /* Battery.swift */,
 				2253A4C221BD0C3B00B4BECF /* BatteryUtil.swift */,
+				2253A4D021CB8F8000B4BECF /* ModelInfo.swift */,
+				2253A4D221CB94C600B4BECF /* ChargeInfo.swift */,
+				2253A4D621CB97C000B4BECF /* HealthInfo.swift */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
@@ -111,8 +130,20 @@
 			isa = PBXGroup;
 			children = (
 				2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */,
+				2253A4C721C5EB3300B4BECF /* LogUtil.swift */,
+				2253A4C921C5EBF600B4BECF /* CommandLineResultReader.swift */,
+				2253A4CB21CB41EA00B4BECF /* SystemProfilerEnums.swift */,
+				2253A4D421CB956F00B4BECF /* YesNoEnum.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2253A4CD21CB68B000B4BECF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2253A4CE21CB68BF00B4BECF /* EnumeratableEnumType.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		227D3B4121AA63DB00BB56ED = {
@@ -138,6 +169,7 @@
 		227D3B4C21AA63DB00BB56ED /* estimator */ = {
 			isa = PBXGroup;
 			children = (
+				2253A4CD21CB68B000B4BECF /* Base */,
 				2253A4C421C5455F00B4BECF /* Utils */,
 				227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */,
 				227D3B4F21AA63DB00BB56ED /* ViewController.swift */,
@@ -312,17 +344,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2253A4D521CB956F00B4BECF /* YesNoEnum.swift in Sources */,
 				223946E721B6C2FD00FDBE9B /* TableViewUtil.swift in Sources */,
+				2253A4CF21CB68BF00B4BECF /* EnumeratableEnumType.swift in Sources */,
 				2253A4C621C5458D00B4BECF /* CommandLineUtil.swift in Sources */,
 				223946DD21B2CDCD00FDBE9B /* Battery.swift in Sources */,
+				2253A4D721CB97C000B4BECF /* HealthInfo.swift in Sources */,
 				2253A4BF21BCFB5B00B4BECF /* OCBridge.m in Sources */,
 				227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */,
 				223946E121B6BEC200FDBE9B /* HardwareInfoViewController.swift in Sources */,
 				223946DF21B4262300FDBE9B /* BatteryInfoViewController.swift in Sources */,
 				2253A4C321BD0C3B00B4BECF /* BatteryUtil.swift in Sources */,
+				2253A4D121CB8F8000B4BECF /* ModelInfo.swift in Sources */,
 				227D3B4E21AA63DB00BB56ED /* AppDelegate.swift in Sources */,
+				2253A4CA21C5EBF600B4BECF /* CommandLineResultReader.swift in Sources */,
+				2253A4CC21CB41EA00B4BECF /* SystemProfilerEnums.swift in Sources */,
 				223946E521B6C09400FDBE9B /* KernelInfoViewController.swift in Sources */,
 				227D3B5321AA63DB00BB56ED /* estimator.xcdatamodeld in Sources */,
+				2253A4D321CB94C600B4BECF /* ChargeInfo.swift in Sources */,
+				2253A4C821C5EB3300B4BECF /* LogUtil.swift in Sources */,
 				223946DB21B2CAD700FDBE9B /* BatteryInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +538,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "\"-D\" DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = net.meeko.estimator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "estimator/estimator-Bridging-Header.h";
@@ -519,6 +560,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "\"-D\"";
 				PRODUCT_BUNDLE_IDENTIFIER = net.meeko.estimator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "estimator/estimator-Bridging-Header.h";

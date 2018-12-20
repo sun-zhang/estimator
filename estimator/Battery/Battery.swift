@@ -38,7 +38,4 @@ public protocol Battery {
     //获取当前循环次数
     func getCurrentCycleCount() -> Int
     
-    //获取电池健康状态
-    func getBatteryHealth() -> String
-    
 }
