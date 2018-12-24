@@ -18,12 +18,34 @@ class CommandLineResultReader {
         
     }
     
-    static func BatteryInfoFromResultString(result : String) -> BatteryInfo {
-        let batteryInfo = BatteryInfo()
-        var batteryInfoString = CommandLineUtil.runCommandOfSystemProfiler(arguments: [SystemProfilerEnums.arguments.Power])
-        
-        batteryInfo.setIsCharged(charged: false)
-        return batteryInfo
+    static func BatteryInfoFromResultString(result : String) -> [TableViewUtil.InformationItem?] {
+        let batteryInfoString = CommandLineUtil.runCommandOfSystemProfiler(arguments: [SystemProfilerEnums.arguments.Power])
+        return ParseBatteryInfo(batteryInfoString : batteryInfoString)
+    }
+    
+static func ParseBatteryInfo(batteryInfoString : String) -> [TableViewUtil.InformationItem?] {
+        var lines : [String] = []
+        batteryInfoString.enumerateLines{
+            line, _ in
+            lines.append(line)
+        }
+//        var batteryInfo = [String : String]()
+        var batteryInfoArray : [TableViewUtil.InformationItem?] = []
+        for item in lines{
+            if item.trimmingCharacters(in: .whitespacesAndNewlines).count > 0{
+                let temp = item.components(separatedBy: ":")
+                LogUtil.OKPrint(temp[0])
+                if temp.count > 1{
+//                    batteryInfo.updateValue(temp[1].trimmingCharacters(in: .whitespacesAndNewlines), forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
+                    
+                batteryInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
+                    
+//                }else {
+//                    batteryInfo.updateValue("", forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
+                }
+            }
+        }
+        return batteryInfoArray
     }
     
 }

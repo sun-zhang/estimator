@@ -129,6 +129,7 @@
 		2253A4C421C5455F00B4BECF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */,
 				2253A4C521C5458D00B4BECF /* CommandLineUtil.swift */,
 				2253A4C721C5EB3300B4BECF /* LogUtil.swift */,
 				2253A4C921C5EBF600B4BECF /* CommandLineResultReader.swift */,
@@ -173,7 +174,6 @@
 				2253A4C421C5455F00B4BECF /* Utils */,
 				227D3B4D21AA63DB00BB56ED /* AppDelegate.swift */,
 				227D3B4F21AA63DB00BB56ED /* ViewController.swift */,
-				223946E621B6C2FD00FDBE9B /* TableViewUtil.swift */,
 				2253A4C121BD0BD900B4BECF /* Battery */,
 				227D3B5421AA63DD00BB56ED /* Assets.xcassets */,
 				227D3B5621AA63DD00BB56ED /* Main.storyboard */,

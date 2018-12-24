@@ -25,6 +25,7 @@ class CommandLineUtil {
         task.launch()
         
         let data = file.readDataToEndOfFile()
+        LogUtil.OKPrint(String(data: data, encoding: String.Encoding.utf8)!)
         return String(data: data, encoding: String.Encoding.utf8)!
     }
     
