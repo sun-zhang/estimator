@@ -64,7 +64,6 @@ class BatteryInfoViewController : NSViewController{
 extension BatteryInfoViewController: NSTableViewDataSource {
     
     func numberOfRows(in batteryInfoTableView: NSTableView) -> Int {
-        LogUtil.OKPrint(batteryData.count)
         return batteryData.count
     }
     
