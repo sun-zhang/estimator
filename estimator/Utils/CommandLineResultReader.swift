@@ -37,15 +37,24 @@ static func ParseBatteryInfo(batteryInfoString : String) -> [TableViewUtil.Infor
                 LogUtil.OKPrint(temp[0])
                 if temp.count > 1{
 //                    batteryInfo.updateValue(temp[1].trimmingCharacters(in: .whitespacesAndNewlines), forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
-                    
-                batteryInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
-                    
+                    if isShowItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines)) {
+                        batteryInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
+                        
+                    }
+                
 //                }else {
 //                    batteryInfo.updateValue("", forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
                 }
             }
         }
         return batteryInfoArray
+    }
+    
+    static func isShowItem(itemName : String) -> Bool {
+        if !itemName.isEmpty {
+            return BatteryUtil.Constant.showItem.contains(itemName)
+        }
+        return false
     }
     
 }

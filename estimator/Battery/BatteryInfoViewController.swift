@@ -89,7 +89,7 @@ extension BatteryInfoViewController: NSTableViewDelegate{
         
         // 2、给tableview的列赋值
         if tableColumn == tableView.tableColumns[0] {
-            text = item.itemName
+            text = BatteryUtil.getItemShowName(itemName: item.itemName)
             cellIdentifier = CellIdentifiers.itemID
         } else if tableColumn == tableView.tableColumns[1] {
             text = item.itemValue
