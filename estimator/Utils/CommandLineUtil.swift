@@ -29,8 +29,14 @@ class CommandLineUtil {
         return String(data: data, encoding: String.Encoding.utf8)!
     }
     
+    ///通过执行SystemProfiler命令获取系统信息
     static func runCommandOfSystemProfiler(arguments: [SystemProfilerEnums.arguments]) -> String {
         return runCommand(launchPath: "/usr/sbin/system_profiler", arguments: SystemProfilerEnums.enumsToStringArray(arguments: arguments))
+    }
+    
+    ///通过执行Sysctl命令获取系统信息
+    static func runCommandOfSysctl(arguments : [String]) -> String {
+        return runCommand(launchPath: "/usr/sbin/sysctl", arguments: arguments)
     }
     
 }

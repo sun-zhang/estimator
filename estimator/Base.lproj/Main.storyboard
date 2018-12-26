@@ -911,7 +911,7 @@
                         <subviews>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykf-qD-6iP">
                                 <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="a39-gE-Dz6">
                                     <rect key="frame" x="1" y="0.0" width="510" height="279"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1017,6 +1017,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="HardwareInfoTableview" destination="mIY-uE-bi6" id="Y6s-1b-bCd"/>
                         <outlet property="hardwareTableView" destination="Ykf-qD-6iP" id="2ma-aQ-lWA"/>
                     </connections>
                 </viewController>

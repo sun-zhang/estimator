@@ -17,7 +17,7 @@ class BatteryUtil {
     }
     
     struct Constant {
-        static let showItem : Set<String> = ["Battery Information",
+        static let batteryShowItem : Set<String> = ["Battery Information",
                                       "Serial Number",
                                       "Manufacturer",
                                       "Device Name",
@@ -35,7 +35,7 @@ class BatteryUtil {
                                       "Battery Installed",
                                       "Amperage (mA)",
                                       "Voltage (mV)"]
-        static let showName : Dictionary = [
+        static let batteryShowName : Dictionary = [
             "Battery Information":"电池信息",
             "Serial Number":"序列号",
             "Manufacturer":"制造商",
@@ -111,6 +111,6 @@ class BatteryUtil {
     
 /// 根据关键属性获取属性显示名称（显示语言的转换）
     static func getItemShowName(itemName : String) -> String{
-        return Constant.showName[itemName] ?? itemName
+        return Constant.batteryShowName[itemName] ?? itemName
     }
 }

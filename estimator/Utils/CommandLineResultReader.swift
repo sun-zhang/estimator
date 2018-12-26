@@ -23,7 +23,7 @@ class CommandLineResultReader {
         return ParseBatteryInfo(batteryInfoString : batteryInfoString)
     }
     
-static func ParseBatteryInfo(batteryInfoString : String) -> [TableViewUtil.InformationItem?] {
+    static func ParseBatteryInfo(batteryInfoString : String) -> [TableViewUtil.InformationItem?] {
         var lines : [String] = []
         batteryInfoString.enumerateLines{
             line, _ in
@@ -37,7 +37,7 @@ static func ParseBatteryInfo(batteryInfoString : String) -> [TableViewUtil.Infor
                 LogUtil.OKPrint(temp[0])
                 if temp.count > 1{
 //                    batteryInfo.updateValue(temp[1].trimmingCharacters(in: .whitespacesAndNewlines), forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
-                    if isShowItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines)) {
+                    if isShowItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines), category : InformationCategoryEnum.Category.battery) {
                         batteryInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
                         
                     }
@@ -50,11 +50,48 @@ static func ParseBatteryInfo(batteryInfoString : String) -> [TableViewUtil.Infor
         return batteryInfoArray
     }
     
-    static func isShowItem(itemName : String) -> Bool {
+    static func isShowItem(itemName : String, category : InformationCategoryEnum.Category ) -> Bool {
         if !itemName.isEmpty {
-            return BatteryUtil.Constant.showItem.contains(itemName)
+            if  case InformationCategoryEnum.Category.battery = category {
+                return BatteryUtil.Constant.batteryShowItem.contains(itemName)
+            }else if case InformationCategoryEnum.Category.hardware = category{
+                return HardwareUtil.Constant.hardwareShowItem.contains(itemName)
+            }else if case InformationCategoryEnum.Category.kernel = category{
+            }
         }
         return false
     }
+    
+    static func HardwareInfoFromResultString(result : String) -> [TableViewUtil.InformationItem?]{
+        let hardwareInfoString = CommandLineUtil.runCommandOfSysctl(arguments: ["-a"])
+        return ParseHardwareInfo(hardwareInfoString : hardwareInfoString)
+    }
+    
+    static func ParseHardwareInfo(hardwareInfoString : String) -> [TableViewUtil.InformationItem?]{
+        var lines : [String] = []
+        hardwareInfoString.enumerateLines{
+            line, _ in
+            lines.append(line)
+        }
+        var hardwareInfoArray : [TableViewUtil.InformationItem?] = []
+        for item in lines{
+            if item.trimmingCharacters(in: .whitespacesAndNewlines).count > 0{
+                let temp = item.components(separatedBy: ":")
+                LogUtil.OKPrint(temp[0])
+                if temp.count > 1{
+                    //                    batteryInfo.updateValue(temp[1].trimmingCharacters(in: .whitespacesAndNewlines), forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
+                    if isShowItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),category :  InformationCategoryEnum.Category.hardware ) {
+                        hardwareInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
+                        
+                    }
+                    
+                    //                }else {
+                    //                    batteryInfo.updateValue("", forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
+                }
+            }
+        }
+        return hardwareInfoArray
+    }
+    
     
 }
