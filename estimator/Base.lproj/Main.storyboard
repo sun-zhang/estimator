@@ -781,12 +781,12 @@
         <!--电池信息-->
         <scene sceneID="bL9-YM-2wd">
             <objects>
-                <viewController title="电池信息" identifier="KernelPage" storyboardIdentifier="KernelPage" id="1qB-rl-34h" customClass="BatteryInfoViewController" customModule="estimator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="电池信息" identifier="BatteryPage" storyboardIdentifier="BatteryPage" id="1qB-rl-34h" customClass="BatteryInfoViewController" customModule="estimator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2sL-8f-uU3">
                         <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpX-rU-MsJ" userLabel="Battery Info Table View">
+                            <scrollView identifier="BatteryInfoTableView" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpX-rU-MsJ" userLabel="Battery Info Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="F8l-nl-8qx">
@@ -909,7 +909,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykf-qD-6iP">
+                            <scrollView identifier="HardwareInfoTableView" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykf-qD-6iP">
                                 <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="a39-gE-Dz6">
@@ -1028,14 +1028,14 @@
         <!--内核信息-->
         <scene sceneID="unx-pV-Wbz">
             <objects>
-                <viewController title="内核信息" identifier="BatteryPage" storyboardIdentifier="BatteryPage" id="dek-h0-6wk" customClass="KernelInfoViewController" customModule="estimator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="内核信息" identifier="KernelPage" storyboardIdentifier="KernelPage" id="dek-h0-6wk" customClass="KernelInfoViewController" customModule="estimator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="LLX-OM-dGJ">
                         <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView identifier="BatteryInfoTableView" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJQ-NF-01L">
+                            <scrollView identifier="KernelInfoTableView" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJQ-NF-01L" userLabel="Kernel Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="512" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="2Lr-qt-aez">
                                     <rect key="frame" x="1" y="0.0" width="510" height="279"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1141,7 +1141,7 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="kernelInfoTableView" destination="aJQ-NF-01L" id="weq-au-h9s"/>
+                        <outlet property="kernelInfoTableView" destination="Xbc-e8-awt" id="vdX-Ma-r0y"/>
                     </connections>
                 </viewController>
                 <customObject id="fYg-1i-pBQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

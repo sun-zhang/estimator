@@ -35,6 +35,7 @@
 		22F0B5D321AC25B400F2E40D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227D3B5621AA63DD00BB56ED /* Main.storyboard */; };
 		22FDA9BC21D224190040978A /* HardwareUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDA9BB21D224190040978A /* HardwareUtil.swift */; };
 		22FDA9BE21D30C510040978A /* InformationCategoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDA9BD21D30C510040978A /* InformationCategoryEnum.swift */; };
+		22FDA9C121D349AF0040978A /* KernelUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDA9C021D349AF0040978A /* KernelUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		227D3B7021AA63DD00BB56ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22FDA9BB21D224190040978A /* HardwareUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareUtil.swift; sourceTree = "<group>"; };
 		22FDA9BD21D30C510040978A /* InformationCategoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCategoryEnum.swift; sourceTree = "<group>"; };
+		22FDA9C021D349AF0040978A /* KernelUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		227D3B4C21AA63DB00BB56ED /* estimator */ = {
 			isa = PBXGroup;
 			children = (
+				22FDA9BF21D345560040978A /* Kernel */,
 				22FDA9BA21D2233A0040978A /* Hardware */,
 				2253A4CD21CB68B000B4BECF /* Base */,
 				2253A4C421C5455F00B4BECF /* Utils */,
@@ -183,7 +186,6 @@
 				2253A4C121BD0BD900B4BECF /* Battery */,
 				227D3B5421AA63DD00BB56ED /* Assets.xcassets */,
 				227D3B5621AA63DD00BB56ED /* Main.storyboard */,
-				223946E421B6C09400FDBE9B /* KernelInfoViewController.swift */,
 				227D3B5921AA63DD00BB56ED /* Info.plist */,
 				227D3B5A21AA63DD00BB56ED /* estimator.entitlements */,
 				227D3B5121AA63DB00BB56ED /* estimator.xcdatamodeld */,
@@ -218,6 +220,15 @@
 				22FDA9BB21D224190040978A /* HardwareUtil.swift */,
 			);
 			path = Hardware;
+			sourceTree = "<group>";
+		};
+		22FDA9BF21D345560040978A /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				223946E421B6C09400FDBE9B /* KernelInfoViewController.swift */,
+				22FDA9C021D349AF0040978A /* KernelUtil.swift */,
+			);
+			path = Kernel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +380,7 @@
 				227D3B5021AA63DB00BB56ED /* ViewController.swift in Sources */,
 				223946E121B6BEC200FDBE9B /* HardwareInfoViewController.swift in Sources */,
 				22FDA9BC21D224190040978A /* HardwareUtil.swift in Sources */,
+				22FDA9C121D349AF0040978A /* KernelUtil.swift in Sources */,
 				223946DF21B4262300FDBE9B /* BatteryInfoViewController.swift in Sources */,
 				2253A4C321BD0C3B00B4BECF /* BatteryUtil.swift in Sources */,
 				2253A4D121CB8F8000B4BECF /* ModelInfo.swift in Sources */,

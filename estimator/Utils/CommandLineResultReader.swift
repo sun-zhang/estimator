@@ -57,6 +57,7 @@ class CommandLineResultReader {
             }else if case InformationCategoryEnum.Category.hardware = category{
                 return HardwareUtil.Constant.hardwareShowItem.contains(itemName)
             }else if case InformationCategoryEnum.Category.kernel = category{
+                return KernelUtil.Constant.kernelShowItem.contains(itemName)
             }
         }
         return false
@@ -79,18 +80,36 @@ class CommandLineResultReader {
                 let temp = item.components(separatedBy: ":")
                 LogUtil.OKPrint(temp[0])
                 if temp.count > 1{
-                    //                    batteryInfo.updateValue(temp[1].trimmingCharacters(in: .whitespacesAndNewlines), forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
                     if isShowItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),category :  InformationCategoryEnum.Category.hardware ) {
                         hardwareInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
                         
                     }
-                    
-                    //                }else {
-                    //                    batteryInfo.updateValue("", forKey: temp[0].trimmingCharacters(in: .whitespacesAndNewlines))
                 }
             }
         }
         return hardwareInfoArray
+    }
+    
+    static func ParseKernelInfo(kernelInfoString : String) -> [TableViewUtil.InformationItem?]{
+        var lines : [String] = []
+        kernelInfoString.enumerateLines{
+            line, _ in
+            lines.append(line)
+        }
+        var kernelInfoArray : [TableViewUtil.InformationItem?] = []
+        for item in lines{
+            if item.trimmingCharacters(in: .whitespacesAndNewlines).count > 0{
+                let temp = item.components(separatedBy: ":")
+                LogUtil.OKPrint(temp[0])
+                if temp.count > 1{
+                    if isShowItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),category :  InformationCategoryEnum.Category.kernel ) {
+                        kernelInfoArray.append(TableViewUtil.InformationItem(itemName:temp[0].trimmingCharacters(in: .whitespacesAndNewlines),itemValue:temp[1].trimmingCharacters(in: .whitespacesAndNewlines)))
+                        
+                    }
+                }
+            }
+        }
+        return kernelInfoArray
     }
     
     

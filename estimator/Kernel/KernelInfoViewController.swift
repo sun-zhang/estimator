@@ -1,5 +1,5 @@
 //
-//  HardwareInfoVC.swift
+//  KernelInfoViewController.swift
 //  estimator
 //
 //  Created by Sam Zhang on 2018/12/4.
@@ -9,35 +9,39 @@
 import Foundation
 import Cocoa
 
-class HardwareInfoViewController : NSViewController {
+class KernelInfoViewController: NSViewController {
     
-    var hardwareData : [TableViewUtil.InformationItem?]  = []
+    var kernelData : [TableViewUtil.InformationItem?]  = []
     
-    @IBOutlet weak var hardwareInfoTableview: NSTableView!
+    //定义字符串数组，并初始化
+    var properties = ["kern.ostype","kern.osrelease","kern.osrevision","kern.osversion","kern.version","kern.hostname",
+                      "kern.uuid","kern.osproductversion","kern.sleeptime","kern.waketime"]
+    
+    @IBOutlet weak var kernelInfoTableView: NSTableView!
     
     override func viewDidLoad() {
         
-        let hardwareInfoResultString = CommandLineUtil.runCommandOfSysctl(arguments: ["-a"])
-        hardwareData = CommandLineResultReader.ParseHardwareInfo(hardwareInfoString: hardwareInfoResultString)
+        let kernelInfoResultString = CommandLineUtil.runCommandOfSysctl(arguments: ["-a"])
+        kernelData = CommandLineResultReader.ParseKernelInfo(kernelInfoString : kernelInfoResultString)
         
-        hardwareInfoTableview.delegate = self
-        hardwareInfoTableview.dataSource = self
+        kernelInfoTableView.delegate = self
+        kernelInfoTableView.dataSource = self
     }
-    
 }
 
 
+
 //view controller实现NSTableViewDataSource协议语法
-extension HardwareInfoViewController: NSTableViewDataSource {
+extension KernelInfoViewController: NSTableViewDataSource {
     
     func numberOfRows(in hardwareInfoTableview: NSTableView) -> Int {
-        return hardwareData.count
+        return kernelData.count
     }
     
 }
 
 //再实现一个NSTableViewDelegate协议
-extension HardwareInfoViewController: NSTableViewDelegate{
+extension KernelInfoViewController: NSTableViewDelegate{
     
     //定义了一个列标示的枚举，值是在storyboard中配置的属性值
     fileprivate enum CellIdentifiers {
@@ -50,13 +54,13 @@ extension HardwareInfoViewController: NSTableViewDelegate{
         var cellIdentifier: String = ""
         
         // 1、判断对象是否为空，是则返回nil给cell
-        guard let item = hardwareData[row] else {
+        guard let item = kernelData[row] else {
             return nil
         }
         
         // 2、给tableview的列赋值
         if tableColumn == tableView.tableColumns[0] {
-            text = HardwareUtil.getItemShowName(itemName: item.itemName)
+            text = KernelUtil.getItemShowName(itemName: item.itemName)
             cellIdentifier = CellIdentifiers.itemID
         } else if tableColumn == tableView.tableColumns[1] {
             text = item.itemValue
