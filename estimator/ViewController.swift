@@ -17,12 +17,12 @@ class ViewController: NSViewController{
         "hw.l1icachesize","hw.l2cachesize","hw.l3cachesize","machdep.cpu.vendor","machdep.cpu.brand_string","machdep.cpu.family","machdep.cpu.model",
         "machdep.cpu.core_count","machdep.cpu.thread_count"]
     
-
     
     @IBAction func click(_ sender: Any) {
-        /* 暂时屏蔽
+      
         //print的语法
         print("这里是点击事件触发")
+        /* 暂时屏蔽
         //这里是使用ProcessInfo获取系统相关的信息
         print("activeProcessorCount:",ProcessInfo.processInfo.activeProcessorCount)
         //for循环的画语法
@@ -69,6 +69,7 @@ class ViewController: NSViewController{
         //放在这里就是在按钮点击事件触发的时候，给tableview填充数据
 //        tableView.delegate = self
 //        tableView.dataSource = self
+        self.view.window?.close()
     }
     
     //定义函数platform，来依次获取系统中的值，并返回结果
