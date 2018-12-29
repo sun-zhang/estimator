@@ -434,7 +434,7 @@
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="tAi-5k-0TK" kind="show" id="mqf-Yw-kI3"/>
+                                    <segue destination="tAi-5k-0TK" kind="show" identifier="shouMainInfo" id="mqf-Yw-kI3"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="hzK-zx-3b4">

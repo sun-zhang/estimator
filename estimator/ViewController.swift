@@ -70,6 +70,13 @@ class ViewController: NSViewController{
 //        tableView.delegate = self
 //        tableView.dataSource = self
         self.view.window?.close()
+        self.performSegue(withIdentifier: "showMainInfo", sender: self)
+    }
+    
+    override func performSegue(withIdentifier identifier: NSStoryboardSegue.Identifier, sender: Any?) {
+        if identifier.compare("showMainInfo").rawValue == 0 {
+            click(sender!)
+        }
     }
     
     //定义函数platform，来依次获取系统中的值，并返回结果
